@@ -1,11 +1,7 @@
 package Pruebas.ArrayList;
 import java.util.ArrayList;
 import java.util.Collections;
-/**
-* Ordenación de un ArrayList
-*
-* @author Luis José Sánchez
-*/
+
 public class PruebaOrdenacionArray {
     public static void main(String[] args) {
         ArrayList<Integer> a = new ArrayList<Integer>();
