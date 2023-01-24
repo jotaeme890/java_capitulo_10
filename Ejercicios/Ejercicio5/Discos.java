@@ -59,4 +59,9 @@ public class Discos {
     public String toString(){
         return "Código: " + this.codigo + "\nAutor: " + this.autor + "\nTítulo: " + this.titulo + "\nGénero: " + this.genero + "\nDuración: " + this.duracion;
     }
+
+    @Override
+    public boolean equals(Object d) {
+        return (this.codigo).equals(((Discos)d).getCodigo());
+    }
 }
