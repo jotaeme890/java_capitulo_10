@@ -34,6 +34,6 @@ public class Ejercicio2 {
         }
 
         System.out.println("El Array sería: " + n);
-        System.out.println("El máximo es: " + maximo +"\nEl mínimo es: " + minimo + "\nY la suma de sus número es: " + suma);
+        System.out.println("El máximo es: " + maximo +"\nEl mínimo es: " + minimo + "\nY la suma de sus número es: " + suma + "\nLa media es: " + (float)(suma/n.size()));
     }
 }
