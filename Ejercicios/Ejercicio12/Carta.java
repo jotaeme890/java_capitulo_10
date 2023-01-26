@@ -58,6 +58,6 @@ public class Carta implements Comparable<Carta>{
             return numero.compareTo(c.getNumero());
         } else {
             return palo.compareTo(c.getPalo());
-        }
+        } 
     }
 }
