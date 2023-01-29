@@ -143,14 +143,14 @@ public class Ejercicio13 {
 
                     System.out.println("Precio de venta: " + a.get(i).getPrecioDeVenta());
                     System.out.print("Nuevo precio de venta: ");
-                    precioVString = System.console().readLine();
+                    precioVString = sc.nextLine();
                     if (!precioVString.equals("")) {
                         a.get(i).setPrecioDeVenta(Double.parseDouble(precioVString));
                     }
 
                     System.out.println("Stock: " + a.get(i).getStock());
                     System.out.print("Nuevo stock: ");
-                    stockString = System.console().readLine();
+                    stockString = sc.nextLine();
                     if (!stockString.equals("")) {
                         a.get(i).setStock(Integer.parseInt(stockString));
                     }
