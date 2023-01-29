@@ -199,7 +199,7 @@ public class Ejercicio13 {
                                     if(lineas.containsKey(codigo)){
                                         elementosFactura = lineas.get(codigo);
                                     } else{
-                                        elementosFactura = 0;
+                                        elementosFactura = 0; 
                                     }
                                     System.out.println("Unidades en la factura provisional: " + elementosFactura);
                                     System.out.print("Unidades que quiere incorporar a la factura: ");
@@ -244,7 +244,7 @@ public class Ejercicio13 {
                                     //! IMPRIMIMOS POR PANTALLA
                                     System.out.printf(" %6s | %15s | %8d | %12.2f | %8.2f\n", codigo, a.get(i).getDescripcion(), unidades, a.get(i).getPrecioDeVenta(), subtotal);
                                     baseImponible += subtotal;
-                                    a.get(i).setStock(a.get(i).getStock() - unidades); // decrementa el stock
+                                    a.get(i).setStock(a.get(i).getStock() - unidades);
                                 }
 
                                 System.out.println("----------------------------------------------------------------");
