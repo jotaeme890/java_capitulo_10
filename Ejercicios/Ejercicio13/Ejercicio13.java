@@ -47,7 +47,7 @@ public class Ejercicio13 {
         double baseImponible;
 
         do {
-            System.out.println("\n\nG E S T I S I M A L");
+            System.out.println("GESTISIMAL");
             System.out.println("===================");
             System.out.println("1. Listado");
             System.out.println("2. Alta");
