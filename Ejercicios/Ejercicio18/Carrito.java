@@ -9,7 +9,7 @@ public class Carrito {
         boolean existe = false;
 
         for (Elemento elemento : carrito) {
-            
+            //SI EL PRODUCTO ES IGUAL DEL QUE SE AÑADE, SE LE AUMENTA LA CANTIDAD AL PRODUCTO QUE YA ESTÁ EN EL ARRAYLIST
             if(elemento.getProducto().equals(a.getProducto())){
                 elemento.setCantidad(elemento.getCantidad() + a.getCantidad());
                 existe = true;
