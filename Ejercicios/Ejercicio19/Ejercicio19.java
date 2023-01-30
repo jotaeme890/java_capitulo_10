@@ -42,12 +42,13 @@ public class Ejercicio19 {
             if(!diccionario.containsValue(palabra)){
                 System.out.println("No conozco esa palabra");
             } else{
+                String traduccion = diccionario.get(palabra);
                 System.out.print("Sinónimos de " + palabra + ": ");
 
                 ArrayList<String> sinonimos = new ArrayList<> ();
                 
                 for(Map.Entry entrada : diccionario.entrySet()){
-                    if(!entrada.getKey().equals(palabra) && entrada.getValue().equals(palabra)){
+                    if(!entrada.getKey().equals(palabra) && entrada.getValue().equals(diccionario)){
                         sinonimos.add((String)entrada.getKey());
                     }
                 }
