@@ -16,48 +16,57 @@
  */
 
 package Ejercicios.Ejercicio19;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Map;
 
 public class Ejercicio19 {
-    public static void main(String[] args) {
+    private static ArrayList<String> obtenerSinonimos(String palabra, HashMap<String, String> dic){
+        String traduccion = dic.get(palabra);
+        ArrayList<String> sinonimos = new ArrayList<String>();
+        for(Map.Entry entrada:dic.entrySet()){
+            if(!entrada.getKey().equals(palabra) && entrada.getValue().equals(traduccion))
+                sinonimos.add((String)entrada.getKey());
+        }
+        return sinonimos;
+    }
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        HashMap<String, String> diccionario = new HashMap<String, String>();
-        //AÑADIMOS LOS VALORES AL HASHMAP
-        diccionario.put("caliente", "hot");
-        diccionario.put("rojo", "red");
-        diccionario.put("ardiente", "hot");
-        diccionario.put("verde", "green");
-        diccionario.put("agujetas", "stiff");
-        diccionario.put("abrasador", "hot");
-        diccionario.put("hierro", "iron");
-        diccionario.put("grande", "big");
-
-        String palabra = "";
-
+        HashMap<String, String> dic = new HashMap<String, String>();
+        dic.put("caliente", "hot");
+        dic.put("rojo", "red");
+        dic.put("ardiente", "hot");
+        dic.put("verde", "green");
+        dic.put("agujetas", "stiff");
+        dic.put("abrasador", "hot");
+        dic.put("hierro", "iron");
+        dic.put("grande", "big");
+        boolean salir = false;
+        
         do {
-            System.out.print("Dime la palabra de la que quieres saber los sinónimos: ");
-            palabra = sc.nextLine();
-
-            if(!diccionario.containsValue(palabra)){
-                System.out.println("No conozco esa palabra");
-            } else{
-                String traduccion = diccionario.get(palabra);
-                System.out.print("Sinónimos de " + palabra + ": ");
-
-                ArrayList<String> sinonimos = new ArrayList<> ();
-                
-                for(Map.Entry entrada : diccionario.entrySet()){
-                    if(!entrada.getKey().equals(palabra) && entrada.getValue().equals(diccionario)){
-                        sinonimos.add((String)entrada.getKey());
+            System.out.println("Introduzca una palabra y le daré los sinónimos: ");
+            String palabra = sc.nextLine();
+            if(palabra.equals("salir"))
+                salir = true;
+            else{
+                if(dic.containsKey(palabra)){
+                    ArrayList<String> sinonimos = obtenerSinonimos(palabra, dic);
+                    if(sinonimos.size()>1){
+                        String cadena=String.format("Sinónimos de %s: ", palabra);
+                        for(int i=0; i < sinonimos.size()-1; i++){
+                            cadena+=String.format("%s, ", sinonimos.get(i));
+                        }
+                        cadena+=sinonimos.get(sinonimos.size()-1);
+                        System.out.println(cadena);
                     }
+                    else
+                        System.out.println("No conozco sinónimos de esa palabra");
                 }
-                for (String string : sinonimos) {
-                    System.out.print(string + " ");
-                }
-                System.out.println();
+                else
+                    System.out.println("No conozco esa palabra");
             }
-        } while (!palabra.equals("salir"));
+        } while (!salir); 
         sc.close();
     }
 }
